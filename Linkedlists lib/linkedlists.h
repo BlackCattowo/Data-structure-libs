@@ -73,20 +73,42 @@ void insert_at(linkedlist *list, int Index, float data)
     // Case 3: Insert somewhere in the middle
     else 
     {
-        Node *current = list->head;
-        for (int i = 0; i < Index - 1 && current != NULL; i++) 
-        {
-            current = current->next;
-        }
+        int TailIndex = linkedlist->size
+        if(TailIndex/2 < Index)
+        {//Checks if the desired position is closer to the tail than the head
+            Node *current = list->tail;
+            for (int i = TailIndex; Index < i && current != NULL; i--) 
+            {//Traverese list backwards
+                current = current->next;
+            }
         
-        new_node->next = current->next;
-        new_node->prev = current;
+            new_node->prev = current->prev;
+            new_node->next = current;
         
-        if (current->next != NULL) 
-        {
-            current->next->prev = new_node;
+            if (current->prev != NULL) 
+            {
+                current->prev->next = new_node;
+            }
+            current->prev = new_node;
+            }
         }
-        current->next = new_node;
+        else
+        {//Normal case if the desired position is closer to the head
+            Node *current = list->head;
+            for (int i = 0; i < Index - 1 && current != NULL; i++) 
+            {//Traverse the list foward
+                current = current->next;
+            }
+        
+            new_node->next = current->next;
+            new_node->prev = current;
+        
+            if (current->next != NULL) 
+            {
+                current->next->prev = new_node;
+            }
+            current->next = new_node;
+            }
     }
 
     // Increase the size of the list
