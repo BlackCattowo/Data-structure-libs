@@ -38,7 +38,7 @@ Node* create_node(float data)
     return new_node;
 }
 
-// Insert an element somewere in the list
+// Insert an element somewhere in the list
 void insert_at(linkedlist *list, int Index, float data) 
 {
     // Create a new node
@@ -73,110 +73,146 @@ void insert_at(linkedlist *list, int Index, float data)
     // Case 3: Insert somewhere in the middle
     else 
     {
-        Node *current = list->head;
-        for (int i = 0; i < Index - 1 && current != NULL; i++) 
+        int TailIndex = list->size;
+
+        if (Index > TailIndex / 2)
         {
-            current = current->next;
+            // If closer to tail, traverse backwards from tail
+            Node *current = list->tail;
+            for (int i = TailIndex - 1; i > Index && current != NULL; i--) 
+            {
+                current = current->prev;  // Traverse backwards
+            }
+
+            new_node->prev = current->prev;
+            new_node->next = current;
+
+            if (current->prev != NULL) 
+            {
+                current->prev->next = new_node;
+            }
+            current->prev = new_node;
         }
-        
-        new_node->next = current->next;
-        new_node->prev = current;
-        
-        if (current->next != NULL) 
+        else
         {
-            current->next->prev = new_node;
+            // Otherwise, traverse forwards from head
+            Node *current = list->head;
+            for (int i = 0; i < Index && current != NULL; i++) 
+            {
+                current = current->next;  // Traverse forwards
+            }
+
+            new_node->next = current;
+            new_node->prev = current->prev;
+
+            if (current->prev != NULL) 
+            {
+                current->prev->next = new_node;
+            }
+            current->prev = new_node;
         }
-        current->next = new_node;
     }
 
     // Increase the size of the list
     list->size++;
 }
 
-// remove an element somewere in the list
-void remove_at(linkedlist *list, int position) 
+// Removes an element from the list
+void remove_at(linkedlist *list, int index) 
 {
-    // Check if the list is empty or the position is invalid
-    if (list->size == 0 || position < 0 || position >= list->size) 
+    if (list->size == 0 || index < 0 || index >= list->size) 
     {
-        return;  // Do nothing
+        return;  
     }
-    
+
     Node *current = list->head;
 
-    // Case 1: Removing the head (position 0)
-    if (position == 0) 
+    // Case 1: Remove head
+    if (index == 0) 
     {
-        list->head = current->next;  // Move head to the next node
+        list->head = current->next;
         if (list->head != NULL) 
         {
             list->head->prev = NULL;
         }
         else 
         {
-            // If the list becomes empty, also set the tail to NULL
-            list->tail = NULL;
+            list->tail = NULL; // The list is now empty
         }
         free(current);
     }
-    // Case 2: Removing the tail (last position)
-    else if (position == list->size - 1) 
+    // Case 2: Remove tail
+    else if (index == list->size - 1) 
     {
-        current = list->tail;  // Get the tail node
-        list->tail = current->prev;  // Move tail to the previous node
+        current = list->tail;
+        list->tail = current->prev;
         if (list->tail != NULL) 
         {
             list->tail->next = NULL;
         }
         free(current);
     }
-    // Case 3: Removing a node in the middle
+    // Case 3: Remove somewhere in the middle
     else 
     {
-        // Traverse to the node at position X
-        for (int i = 0; i < position; i++) 
+        if (index > list->size / 2) 
         {
-            current = current->next;
+            current = list->tail;
+            for (int i = list->size - 1; i > index; i--) 
+            {
+                current = current->prev;
+            }
+        } 
+        else 
+        {
+            current = list->head;
+            for (int i = 0; i < index; i++) 
+            {
+                current = current->next;
+            }
         }
 
-        // Adjust the pointers to bypass the current node
         current->prev->next = current->next;
         current->next->prev = current->prev;
         free(current);
     }
 
-    // Decrease the size of the list
+    // Adjust the size
     list->size--;
+    
+    // If list is empty, reset the tail
+    if (list->size == 0) 
+    {
+        list->tail = NULL;
+    }
 }
 
-// Get the position of a node from the list (by value)
+// Find a node by the data storage on it
 int get_node(linkedlist *list, float data) 
 {
     int Index = 0;
     Node *current = list->head;
     
-    // Search for the nod
     while (current != NULL && current->data != data) 
     {
         current = current->next;
-        (Index++);
+        Index++;
     }
     
     if (current == NULL) 
     {
         printf("Element not found.\n");
-        return(0);
+        return -1;  // Return -1 when not found
     }
     
-    else
-    {
-        return(Index);
-    }
+    return Index;
 }
 
-// Free the entire list
+// Free the allocated memmory
 void free_list(linkedlist *list) 
 {
+    if (list->size == 0) return;  // No need to free if the list is empty
+
     Node *current = list->head;
     Node *next_node;
     
@@ -186,13 +222,13 @@ void free_list(linkedlist *list)
         free(current);
         current = next_node;
     }
-    
+
     list->head = NULL;
     list->tail = NULL;
     list->size = 0;
 }
 
-// Print the list (for testing purposes)
+// Prints the list
 void print_list(linkedlist *list) 
 {
     Node *current = list->head;
@@ -205,10 +241,11 @@ void print_list(linkedlist *list)
     printf("\n");
 }
 
-// Function to check the size of the list
+// Return the size of the list
 int get_size(linkedlist *list) 
 {
     return list->size;
 }
 
-#endif // SET_LINKEDLISTS_H
+
+#endif
