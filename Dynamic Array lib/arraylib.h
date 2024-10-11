@@ -1,5 +1,5 @@
-#ifndef LISTS_H
-#define LISTS_H
+#ifndef ARRAYLIB_H
+#define ARRAYLIB_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -13,7 +13,7 @@ typedef struct Dynamic_Array
     void (*remove)(struct Dynamic_Array (*array), size_t index); // Função para remover elemento
     void (*alter)(struct Dynamic_Array (*array), size_t index, int value); // Função para alterar elemento
     void (*free)(struct Dynamic_Array (*array)); // Função para liberar memória
-} list;
+} vetor;
 
 // Funções para manipulação do list
 void add_element(list (*array), int value) 
