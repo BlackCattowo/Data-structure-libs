@@ -4,7 +4,7 @@
 int main() 
 {
     // Inicializando um DynamicArray
-    vetor vetor_ex;
+    array vetor_ex;
     vetor_ex.size = 5;
     vetor_ex.count = 0;
     vetor_ex.element = (int *)malloc(vetor_ex.size * sizeof(int));
