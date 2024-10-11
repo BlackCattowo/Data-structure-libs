@@ -4,6 +4,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * Struct representing a dynamic array.
+ * - `element`: Pointer to the array of integers.
+ * - `size`: Current allocated size of the array.
+ * - `count`: Current number of elements in the array.
+ * - Function pointers for operations: add, remove, alter, free, print, find, get.
+ */
 typedef struct Dynamic_Array
 {
     int *element;
@@ -23,12 +30,18 @@ void add_element(array *vetor, int value);
 void remove_element(array *vetor, size_t index);
 void alter_element(array *vetor, size_t index, int value);
 void free_array(array *vetor);
-void init_array(array *vetor, size_t initial_size);
+void set_array(array *vetor, size_t initial_size);
 void print_array(array *vetor);
 int find_index(array *vetor, int value);
 int get_element(array *vetor, size_t index); // Declaration for get function
 
-// Function definitions
+/**
+ * Adds a new element to the dynamic array.
+ * If the array is full, it will reallocate memory and double the size of the array.
+ *
+ * @param vetor Pointer to the dynamic array.
+ * @param value Integer value to be added to the array.
+ */
 void add_element(array *vetor, int value)
 {
     if (vetor->count < vetor->size)
@@ -52,6 +65,13 @@ void add_element(array *vetor, int value)
     }
 }
 
+/**
+ * Removes an element at a specific index from the dynamic array.
+ * All elements after the removed element are shifted left.
+ *
+ * @param vetor Pointer to the dynamic array.
+ * @param index Index of the element to remove.
+ */
 void remove_element(array *vetor, size_t index)
 {
     if (index < vetor->count)
@@ -64,6 +84,13 @@ void remove_element(array *vetor, size_t index)
     }
 }
 
+/**
+ * Alters the value of an existing element at a specific index in the array.
+ *
+ * @param vetor Pointer to the dynamic array.
+ * @param index Index of the element to be altered.
+ * @param value New value to set at the specified index.
+ */
 void alter_element(array *vetor, size_t index, int value)
 {
     if (index < vetor->count)
@@ -72,6 +99,12 @@ void alter_element(array *vetor, size_t index, int value)
     }
 }
 
+/**
+ * Frees the memory allocated for the dynamic array.
+ * This function releases the memory used by the array and resets the count and size to zero.
+ *
+ * @param vetor Pointer to the dynamic array.
+ */
 void free_array(array *vetor)
 {
     free(vetor->element);
@@ -80,6 +113,12 @@ void free_array(array *vetor)
     vetor->size = 0;
 }
 
+/**
+ * Prints the elements of the dynamic array to the console.
+ * If the array is empty, it prints a message indicating that.
+ *
+ * @param vetor Pointer to the dynamic array.
+ */
 void print_array(array *vetor)
 {
     if (vetor->count == 0)
@@ -97,6 +136,13 @@ void print_array(array *vetor)
     }
 }
 
+/**
+ * Finds the index of the first occurrence of a specified value in the dynamic array.
+ *
+ * @param vetor Pointer to the dynamic array.
+ * @param value The integer value to search for.
+ * @return Index of the first occurrence of the value, or -1 if the value is not found.
+ */
 int find_index(array *vetor, int value)
 {
     for (size_t i = 0; i < vetor->count; i++)
@@ -109,6 +155,14 @@ int find_index(array *vetor, int value)
     return -1;
 }
 
+/**
+ * Retrieves the element at a specific index in the dynamic array.
+ * If the index is out of bounds, it returns -1 and prints an error message.
+ *
+ * @param vetor Pointer to the dynamic array.
+ * @param index Index of the element to retrieve.
+ * @return Value at the specified index, or -1 if the index is invalid.
+ */
 int get_element(array *vetor, size_t index) // New get function
 {
     if (index < vetor->count)
@@ -122,7 +176,15 @@ int get_element(array *vetor, size_t index) // New get function
     }
 }
 
-void init_array(array *vetor, size_t initial_size)
+/**
+ * Initializes the dynamic array with a specified initial size.
+ * Allocates memory for the array and sets the size and count.
+ * Also assigns function pointers for operations like add, remove, alter, etc.
+ *
+ * @param vetor Pointer to the dynamic array to initialize.
+ * @param initial_size Initial size of the dynamic array.
+ */
+void set_array(array *vetor, size_t initial_size)
 {
     vetor->size = initial_size;
     vetor->count = 0;
