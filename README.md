@@ -4,4 +4,6 @@ Bibliotecas desenvolvidas por mim para tarefas que envolvam estrutura de dados e
 ### Projetos incluidos:
 
   - [x] Dynamic Arrays
+  - [ ] Filas
+  - [ ] Pilhas
   - [ ] Linked Lists
