@@ -13,5 +13,6 @@ Bibliotecas desenvolvidas por mim para tarefas que envolvam estrutura de dados e
   - [ ] Doubly Linked Lists
   - [ ] Circular Linked Lists
 
-  - [ ] LinkedList lib
-  - [ ] LinkedList addon
+- **Biblioteca de listas**
+  - [x] LinkedList lib
+  - [ ] LinkedList addon (W.I.P.)
