@@ -1,0 +1,1 @@
+Filas (ou queues) são formas de estrutura de dados cujo o primeiro elemento adicionado é também o primeiro elemento a sair.
