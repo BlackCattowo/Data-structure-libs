@@ -1,0 +1,1 @@
+Pilhas (Stacks) são formas de estrutura de dados em que o ultimo elemento é o primeiro a sair.
