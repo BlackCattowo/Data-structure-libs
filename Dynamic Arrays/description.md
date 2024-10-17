@@ -1,0 +1,1 @@
+Arrays dinamicos são arrays cujo tamanho é alteravel de forma dinamica e cujos elementos de qualquer posição possam ser manipulados.
