@@ -9,4 +9,9 @@ Bibliotecas desenvolvidas por mim para tarefas que envolvam estrutura de dados e
   - [ ] Pilhas
 
 - **Listas encadeadas**
-  - [ ] Linked Lists
+  - [ ] Simple Linked Lists
+  - [ ] Doubly Linked Lists
+  - [ ] Circular Linked Lists
+
+  - [ ] LinkedList lib
+  - [ ] LinkedList addon
