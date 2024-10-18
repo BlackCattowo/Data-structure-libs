@@ -12,6 +12,7 @@ Bibliotecas desenvolvidas por mim para tarefas que envolvam estrutura de dados e
   - [ ] Simple Linked Lists
   - [ ] Doubly Linked Lists
   - [ ] Circular Linked Lists
+  - [ ] Doubly Circular Linked Lists (ouroboros)
 
 - **Biblioteca de listas**
   - [x] LinkedList lib
