@@ -8,7 +8,7 @@ Bibliotecas desenvolvidas por mim para tarefas que envolvam estrutura de dados e
   - [x] Filas
   - [x] Pilhas
 
-- **Listas encadeadas**
+- **Listas encadeadas** (W.I.P.)
   - [ ] Simple Linked Lists
   - [ ] Doubly Linked Lists
   - [ ] Circular Linked Lists
