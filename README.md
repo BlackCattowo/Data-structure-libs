@@ -14,6 +14,11 @@ Bibliotecas desenvolvidas por mim para tarefas que envolvam estrutura de dados e
   - [ ] Circular Linked Lists
   - [ ] Doubly Circular Linked Lists (ouroboros)
 
-- **Biblioteca de listas**
+- **Arvores** (W.I.P.)
+  - [ ] Binary Tree
+  - [ ] Recursive Tree
+
+- **Bibliotecas**
   - [x] LinkedList lib
   - [ ] LinkedList addon (W.I.P.)
+  - [ ] Fractree (W.I.P.)
