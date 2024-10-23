@@ -20,5 +20,6 @@ Bibliotecas desenvolvidas por mim para tarefas que envolvam estrutura de dados e
 
 - **Bibliotecas**
   - [x] LinkedList lib
+  - [x] Dynamic Addon
   - [ ] LinkedList addon (W.I.P.)
   - [ ] Fractree (W.I.P.)
