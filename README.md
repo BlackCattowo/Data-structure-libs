@@ -65,7 +65,7 @@ que contém bibliotecas experimentais, extras ou especiais que são desenvolvida
   - [ ] Recursive Tree
 
 - **Bibliotecas**
-  - [x] LinkedList lib (on rework)
+  - [x] LinkedList lib **<sub>(On rework)</sub>**
   - [x] Dynamic Addon
-  - [ ] LinkedList addon (W.I.P.)
-  - [ ] Fractree (W.I.P.)
+  - [ ] LinkedList addon **<sub>(W.I.P.)</sub>**
+  - [ ] Fractree **<sub>(W.I.P.)</sub>**
