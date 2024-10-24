@@ -65,7 +65,12 @@ que contém bibliotecas experimentais, extras ou especiais que são desenvolvida
   - [ ] Recursive Tree
 
 - **Bibliotecas**
-  - [x] LinkedList lib **<sub>(On rework)</sub>**
+  - [x] LinkedList lib **<sup>[1]</sup>**
   - [x] Dynamic Addon
-  - [ ] LinkedList addon **<sub>(W.I.P.)</sub>**
-  - [ ] Fractree **<sub>(W.I.P.)</sub>**
+  - [ ] LinkedList addon **<sup>[2]</sup>**
+  - [ ] Fractree **<sup>[2]</sup>**
+
+> [!NOTE]
+> ### <sup>[1] = On rework, [2] = Work In Progress (W.I.P.)</sup>
+> Bibliotecas marcadas com (W.I.P.) estão atualmente sendo trabalhadas por mim e estão incompletas. </br>
+> Bibliotecas marcadas com "On rework" são bibliotecas que foram concluidos, porém apresentam erros e portanto precisam ser retrabalhadas. </br>
