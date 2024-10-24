@@ -56,7 +56,7 @@ que contém bibliotecas experimentais, extras ou especiais que são desenvolvida
 
 - **Listas encadeadas** 
   - [x] Simple Linked Lists
-  - [ ] Doubly Linked Lists **<sup>[2]</sup>**
+  - [x] Doubly Linked Lists 
   - [ ] Circular Linked Lists **<sup>[2]</sup>**
   - [ ] Doubly Circular Linked Lists (ouroboros) **<sup>[2]</sup>**
 
