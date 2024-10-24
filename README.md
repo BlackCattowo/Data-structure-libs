@@ -41,7 +41,7 @@ que contém bibliotecas experimentais, extras ou especiais que são desenvolvida
 
 </br>
 
-> [!NOTE]
+> [!TIP]
 > Formatos "Traditional", "Modular" e "Formal" se referem a bibliotecas cujos arquivos são separados em um ***header file (.h)*** e um ***source file (.c)*** </br>
 > esses arquivos precisam ser compilados manualmente, porém são a forma comum de arquivos de biblioteca e podem ser compilados universalmente. </br> </br>
 > Formatos "Compact", "Monolithic header" e "Simplified" se referem a bibliotecas inteiramente salvas em apenas um ***header file (.h)*** </br>
@@ -71,6 +71,7 @@ que contém bibliotecas experimentais, extras ou especiais que são desenvolvida
   - [ ] Fractree **<sup>[2]</sup>**
 
 > [!NOTE]
-> ### <sup>[1] = On rework, [2] = Work In Progress (W.I.P.)</sup>
-> Bibliotecas marcadas com (W.I.P.) estão atualmente sendo trabalhadas por mim e estão incompletas. </br>
-> Bibliotecas marcadas com "On rework" são bibliotecas que foram concluidos, porém apresentam erros e portanto precisam ser retrabalhadas. </br>
+> ### <sup>[1] = In the making, [2] = Work In Progress (W.I.P.), [3] = On rework.</sup>
+> - Bibliotecas marcadas com "In the making" ainda não tiveram seus arquivos publicados, mas estão sendo feitas por mim. </br>
+> - Bibliotecas marcadas com (W.I.P.) estão atualmente sendo trabalhadas por mim e estão incompletas. </br>
+> - Bibliotecas marcadas com "On rework" são bibliotecas que foram concluidos, porém apresentam erros e portanto precisam ser retrabalhadas. </br>
