@@ -18,14 +18,23 @@ typedef struct SinglyLinkedList
     int size;
 } singly;
 
-// Initialize the singly linked list
+/**
+ * @brief Initializes the singly linked list.
+ * 
+ * @param list Pointer to the singly linked list to be initialized.
+ */
 void init_list(singly *list) 
 {
     list->head = NULL;
     list->size = 0;
 }
 
-// Create a new node
+/**
+ * @brief Creates a new node with the given data.
+ * 
+ * @param data Data to store in the new node.
+ * @return Node* Pointer to the newly created node.
+ */
 Node* create_node(float data) 
 {
     Node *new_node = (Node *)malloc(sizeof(Node));
@@ -34,7 +43,13 @@ Node* create_node(float data)
     return new_node;
 }
 
-// Insert an element at a given index
+/**
+ * @brief Inserts an element at a given index in the list.
+ * 
+ * @param list Pointer to the singly linked list.
+ * @param index Position where the new element should be inserted.
+ * @param data Data to store in the new element.
+ */
 void insert_at(singly *list, int index, float data) 
 {
     Node *new_node = create_node(data);
@@ -62,7 +77,12 @@ void insert_at(singly *list, int index, float data)
     list->size++;
 }
 
-// Removes an element at a given index
+/**
+ * @brief Removes an element at a given index from the list.
+ * 
+ * @param list Pointer to the singly linked list.
+ * @param index Position of the element to remove.
+ */
 void remove_at(singly *list, int index) 
 {
     if (list->size == 0 || index < 0 || index >= list->size) 
@@ -95,7 +115,13 @@ void remove_at(singly *list, int index)
     list->size--;
 }
 
-// Find a node by the data stored in it
+/**
+ * @brief Finds the index of a node containing the specified data.
+ * 
+ * @param list Pointer to the singly linked list.
+ * @param data Data to search for.
+ * @return int Index of the found node, or -1 if not found.
+ */
 int get_node(singly *list, float data) 
 {
     int index = 0;
@@ -116,7 +142,35 @@ int get_node(singly *list, float data)
     return index;
 }
 
-// Free the allocated memory
+/**
+ * @brief Retrieves the element at a specific index in the list.
+ * 
+ * @param list Pointer to the singly linked list.
+ * @param index Position of the element to retrieve.
+ * @return float Data stored at the specified index, or -1 if index is out of bounds.
+ */
+float get_element_at(singly *list, int index) 
+{
+    if (index < 0 || index >= list->size) 
+    {
+        printf("Index out of bounds.\n");
+        return -1;  // Return -1 for invalid index
+    }
+
+    Node *current = list->head;
+    for (int i = 0; i < index; i++) 
+    {
+        current = current->next;
+    }
+
+    return current->data;
+}
+
+/**
+ * @brief Frees the allocated memory for the list and its elements.
+ * 
+ * @param list Pointer to the singly linked list.
+ */
 void free_list(singly *list) 
 {
     if (list->size == 0) return;  // No need to free if the list is empty
@@ -135,7 +189,11 @@ void free_list(singly *list)
     list->size = 0;
 }
 
-// Print the list
+/**
+ * @brief Prints the elements of the list.
+ * 
+ * @param list Pointer to the singly linked list.
+ */
 void print_list(singly *list) 
 {
     Node *current = list->head;
@@ -148,7 +206,12 @@ void print_list(singly *list)
     printf("\n");
 }
 
-// Return the size of the list
+/**
+ * @brief Returns the size of the list.
+ * 
+ * @param list Pointer to the singly linked list.
+ * @return int Size of the list.
+ */
 int get_size(singly *list) 
 {
     return list->size;
