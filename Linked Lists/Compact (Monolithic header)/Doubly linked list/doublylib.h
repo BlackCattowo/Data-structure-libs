@@ -20,7 +20,11 @@ typedef struct DoublyLinkedList
     int size;
 } doubly;
 
-// Initialize the doubly linked list
+/**
+ * @brief Initializes the doubly linked list.
+ * 
+ * @param list Pointer to the doubly linked list to be initialized.
+ */
 void init_list(doubly *list) 
 {
     list->head = NULL;
@@ -28,7 +32,12 @@ void init_list(doubly *list)
     list->size = 0;
 }
 
-// Create a new node
+/**
+ * @brief Creates a new node with the given data.
+ * 
+ * @param data Data to store in the new node.
+ * @return Node* Pointer to the newly created node.
+ */
 Node* create_node(float data) 
 {
     Node *new_node = (Node *)malloc(sizeof(Node));
@@ -38,14 +47,18 @@ Node* create_node(float data)
     return new_node;
 }
 
-// Insert an element somewhere in the list
-void insert_at(doubly *list, int Index, float data) 
+/**
+ * @brief Inserts an element at a specified index in the list.
+ * 
+ * @param list Pointer to the doubly linked list.
+ * @param index Position where the new element should be inserted.
+ * @param data Data to store in the new element.
+ */
+void insert_at(doubly *list, int index, float data) 
 {
-    // Create a new node
     Node *new_node = create_node(data);
 
-    // Case 1: Insert at the head (position 0)
-    if (Index <= 0 || list->size == 0) 
+    if (index <= 0 || list->size == 0) 
     {
         new_node->next = list->head;
         if (list->head != NULL) 
@@ -53,15 +66,12 @@ void insert_at(doubly *list, int Index, float data)
             list->head->prev = new_node;
         }
         list->head = new_node;
-
-        // If the list was empty, the new node is also the tail
         if (list->tail == NULL) 
         {
             list->tail = new_node;
         }
     }
-    // Case 2: Insert at the tail (position >= size)
-    else if (Index >= list->size) 
+    else if (index >= list->size) 
     {
         new_node->prev = list->tail;
         if (list->tail != NULL) 
@@ -70,64 +80,41 @@ void insert_at(doubly *list, int Index, float data)
         }
         list->tail = new_node;
     }
-    // Case 3: Insert somewhere in the middle
     else 
     {
-        int TailIndex = list->size;
-
-        if (Index > TailIndex / 2)
+        Node *current = list->head;
+        for (int i = 0; i < index; i++) 
         {
-            // If closer to tail, traverse backwards from tail
-            Node *current = list->tail;
-            for (int i = TailIndex - 1; i > Index && current != NULL; i--) 
-            {
-                current = current->prev;  // Traverse backwards
-            }
-
-            new_node->prev = current->prev;
-            new_node->next = current;
-
-            if (current->prev != NULL) 
-            {
-                current->prev->next = new_node;
-            }
-            current->prev = new_node;
+            current = current->next;
         }
-        else
+
+        new_node->next = current;
+        new_node->prev = current->prev;
+        if (current->prev != NULL) 
         {
-            // Otherwise, traverse forwards from head
-            Node *current = list->head;
-            for (int i = 0; i < Index && current != NULL; i++) 
-            {
-                current = current->next;  // Traverse forwards
-            }
-
-            new_node->next = current;
-            new_node->prev = current->prev;
-
-            if (current->prev != NULL) 
-            {
-                current->prev->next = new_node;
-            }
-            current->prev = new_node;
+            current->prev->next = new_node;
         }
+        current->prev = new_node;
     }
 
-    // Increase the size of the list
     list->size++;
 }
 
-// Removes an element from the list
+/**
+ * @brief Removes an element at a given index from the list.
+ * 
+ * @param list Pointer to the doubly linked list.
+ * @param index Position of the element to remove.
+ */
 void remove_at(doubly *list, int index) 
 {
     if (list->size == 0 || index < 0 || index >= list->size) 
     {
-        return;  
+        return;
     }
 
     Node *current = list->head;
 
-    // Case 1: Remove head
     if (index == 0) 
     {
         list->head = current->next;
@@ -137,11 +124,10 @@ void remove_at(doubly *list, int index)
         }
         else 
         {
-            list->tail = NULL; // The list is now empty
+            list->tail = NULL;
         }
         free(current);
     }
-    // Case 2: Remove tail
     else if (index == list->size - 1) 
     {
         current = list->tail;
@@ -152,24 +138,11 @@ void remove_at(doubly *list, int index)
         }
         free(current);
     }
-    // Case 3: Remove somewhere in the middle
     else 
     {
-        if (index > list->size / 2) 
+        for (int i = 0; i < index; i++) 
         {
-            current = list->tail;
-            for (int i = list->size - 1; i > index; i--) 
-            {
-                current = current->prev;
-            }
-        } 
-        else 
-        {
-            current = list->head;
-            for (int i = 0; i < index; i++) 
-            {
-                current = current->next;
-            }
+            current = current->next;
         }
 
         current->prev->next = current->next;
@@ -177,45 +150,85 @@ void remove_at(doubly *list, int index)
         free(current);
     }
 
-    // Adjust the size
     list->size--;
-    
-    // If list is empty, reset the tail
     if (list->size == 0) 
     {
         list->tail = NULL;
     }
 }
 
-// Find a node by the data storage on it
+/**
+ * @brief Finds the index of a node containing the specified data.
+ * 
+ * @param list Pointer to the doubly linked list.
+ * @param data Data to search for.
+ * @return int Index of the found node, or -1 if not found.
+ */
 int get_node(doubly *list, float data) 
 {
-    int Index = 0;
+    int index = 0;
     Node *current = list->head;
-    
+
     while (current != NULL && current->data != data) 
     {
         current = current->next;
-        Index++;
+        index++;
     }
-    
+
     if (current == NULL) 
     {
-        printf("Element not found.\n");
-        return -1;  // Return -1 when not found
+        return -1;
     }
-    
-    return Index;
+
+    return index;
 }
 
-// Free the allocated memmory
+/**
+ * @brief Retrieves the element at a specific index in the list.
+ * 
+ * @param list Pointer to the doubly linked list.
+ * @param index Position of the element to retrieve.
+ * @return float Data stored at the specified index, or -1 if index is out of bounds.
+ */
+float get_element_at(doubly *list, int index) 
+{
+    if (index < 0 || index >= list->size) 
+    {
+        printf("Index out of bounds.\n");
+        return -1;
+    }
+
+    Node *current;
+    if (index > list->size / 2) 
+    {
+        current = list->tail;
+        for (int i = list->size - 1; i > index; i--) 
+        {
+            current = current->prev;
+        }
+    } 
+    else 
+    {
+        current = list->head;
+        for (int i = 0; i < index; i++) 
+        {
+            current = current->next;
+        }
+    }
+
+    return current->data;
+}
+
+/**
+ * @brief Frees the allocated memory for the list and its elements.
+ * 
+ * @param list Pointer to the doubly linked list.
+ */
 void free_list(doubly *list) 
 {
-    if (list->size == 0) return;  // No need to free if the list is empty
-
     Node *current = list->head;
     Node *next_node;
-    
+
     while (current != NULL) 
     {
         next_node = current->next;
@@ -228,11 +241,14 @@ void free_list(doubly *list)
     list->size = 0;
 }
 
-// Prints the list
+/**
+ * @brief Prints the elements of the list.
+ * 
+ * @param list Pointer to the doubly linked list.
+ */
 void print_list(doubly *list) 
 {
     Node *current = list->head;
-    
     while (current != NULL) 
     {
         printf("%.2f ", current->data);
@@ -241,7 +257,12 @@ void print_list(doubly *list)
     printf("\n");
 }
 
-// Return the size of the list
+/**
+ * @brief Returns the size of the list.
+ * 
+ * @param list Pointer to the doubly linked list.
+ * @return int Size of the list.
+ */
 int get_size(doubly *list) 
 {
     return list->size;

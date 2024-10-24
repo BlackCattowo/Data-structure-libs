@@ -28,6 +28,14 @@ typedef struct DoublyLinkedList
 void init_list(doubly *list);
 
 /**
+ * @brief Creates a new node with the given data.
+ * 
+ * @param data Data to store in the new node.
+ * @return Node* Pointer to the newly created node.
+ */
+Node* create_node(float data);
+
+/**
  * @brief Inserts an element at a specified index in the list.
  * 
  * @param list Pointer to the doubly linked list.
