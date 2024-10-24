@@ -54,25 +54,25 @@ que contém bibliotecas experimentais, extras ou especiais que são desenvolvida
   - [x] Filas
   - [x] Pilhas
 
-- **Listas encadeadas** (W.I.P.)
+- **Listas encadeadas** 
   - [x] Simple Linked Lists
-  - [ ] Doubly Linked Lists
-  - [ ] Circular Linked Lists
-  - [ ] Doubly Circular Linked Lists (ouroboros)
+  - [ ] Doubly Linked Lists **<sup>[2]</sup>**
+  - [ ] Circular Linked Lists **<sup>[2]</sup>**
+  - [ ] Doubly Circular Linked Lists (ouroboros) **<sup>[2]</sup>**
 
-- **Arvores** (W.I.P.)
-  - [ ] Binary Tree
-  - [ ] Recursive Tree
+- **Arvores** 
+  - [ ] Binary Tree **<sup>[4]</sup>**
+  - [ ] Recursive Tree **<sup>[4]</sup>**
 
 - **Bibliotecas**
-  - [x] LinkedList lib **<sup>[1]</sup>**
+  - [ ] LinkedList lib **<sup>[3]</sup>**
   - [x] Dynamic Addon
-  - [ ] LinkedList addon **<sup>[2]</sup>**
+  - [ ] LinkedList addon **<sup>[3]</sup>**
   - [ ] Fractree **<sup>[2]</sup>**
 
 > [!NOTE]
 > ### <sup>[1] = In the making, [2] = Work In Progress (W.I.P.), [3] = On rework, [4] = Future work.</sup>
-> - Bibliotecas marcadas com "In the making" ainda não tiveram seus arquivos publicados, mas estão sendo feitas por mim. </br>
-> - Bibliotecas marcadas com (W.I.P.) estão atualmente sendo trabalhadas por mim e estão incompletas. </br>
-> - Bibliotecas marcadas com "On rework" são bibliotecas que foram concluidos, porém apresentam erros e portanto precisam ser retrabalhadas. </br>
-> - Bibliotecas marcadas com "Future work" são bibliotecas cujo desenvolvimento ainda não foi iniciado. </br>
+> - Bibliotecas marcadas com [1] ainda não tiveram seus arquivos publicados, mas estão sendo feitas por mim. </br>
+> - Bibliotecas marcadas com [2] estão atualmente sendo trabalhadas por mim e estão incompletas, porém já são funcionais. </br>
+> - Bibliotecas marcadas com [3] são bibliotecas que foram concluidos, porém apresentam erros e portanto precisam ser retrabalhadas. </br>
+> - Bibliotecas marcadas com [4] são bibliotecas cujo desenvolvimento ainda não foi iniciado. </br>
