@@ -1,2 +1,2 @@
-Lista Encadeada Dupla
+## Lista duplamente encadeada:
 Uma lista encadeada dupla é uma estrutura mais complexa, onde cada nó contém um valor, um ponteiro para o próximo nó e um ponteiro para o nó anterior. Isso permite que a travessia da lista ocorra em ambas as direções: do início para o fim e do fim para o início. O primeiro nó ainda é chamado de cabeça, e o último nó aponta para NULL em seu ponteiro para o próximo nó, enquanto o ponteiro para o nó anterior do primeiro nó é NULL. A lista encadeada dupla oferece maior flexibilidade em operações de inserção e remoção, pois permite operações eficientes em ambas as extremidades da lista, mas geralmente consome mais memória devido ao armazenamento adicional do ponteiro anterior.
