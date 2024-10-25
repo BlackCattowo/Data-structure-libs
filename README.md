@@ -57,18 +57,18 @@ que contém bibliotecas experimentais, extras ou especiais que são desenvolvida
 - **Listas encadeadas** 
   - [x] Simple Linked Lists
   - [x] Doubly Linked Lists 
-  - [ ] Circular Linked Lists **<sup>[2]</sup>**
-  - [ ] Doubly Circular Linked Lists (ouroboros) **<sup>[2]</sup>**
+  - [x] Circular Linked Lists 
+  - [x] Doubly Circular Linked Lists (ouroboros) 
 
 - **Arvores** 
-  - [ ] Binary Tree **<sup>[4]</sup>**
+  - [ ] Binary Tree **<sup>[1]</sup>**
   - [ ] Recursive Tree **<sup>[4]</sup>**
 
 - **Bibliotecas**
   - [ ] LinkedList lib **<sup>[3]</sup>**
   - [x] Dynamic Addon
   - [ ] LinkedList addon **<sup>[3]</sup>**
-  - [ ] Fractree **<sup>[2]</sup>**
+  - [ ] Fractree **<sup>[3]</sup>**
 
 > [!NOTE]
 > ### <sup>[1] = In the making, [2] = Work In Progress (W.I.P.), [3] = On rework, [4] = Future work.</sup>

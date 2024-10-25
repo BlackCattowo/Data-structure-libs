@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h> // for NAN
 
 // Node structure for circular linked list
 typedef struct Node 
