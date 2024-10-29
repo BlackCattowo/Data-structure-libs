@@ -68,7 +68,7 @@ que contém bibliotecas experimentais, extras ou especiais que são desenvolvida
   - [ ] LinkedList lib **<sup>[3]</sup>**
   - [x] Dynamic Addon
   - [ ] LinkedList addon **<sup>[3]</sup>**
-  - [ ] Fractree **<sup>[3]</sup>**
+  - [ ] Fractree **<sup>[1]</sup>**
 
 > [!NOTE]
 > ### <sup>[1] = In the making, [2] = Work In Progress (W.I.P.), [3] = On rework, [4] = Future work.</sup>
