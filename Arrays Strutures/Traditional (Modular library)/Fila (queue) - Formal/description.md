@@ -1,5 +1,6 @@
 ## Filas:
-Filas são estruturas de dados que seguem o princípio **First In, First Out (FIFO)**, ou seja, o primeiro elemento a ser inserido é o primeiro a ser removido. Essa estrutura é similar a uma fila de pessoas em um banco ou loja: a pessoa que chega primeiro é a primeira a ser atendida.
+Filas são estruturas de dados que seguem o princípio **First In, First Out (FIFO)**, ou seja, o primeiro elemento a ser inserido é o primeiro a ser removido. Essa estrutura é similar a uma fila de pessoas em um banco ou loja: a pessoa que chega primeiro é a primeira a ser atendida. </br>
+Devido à sua simplicidade e eficiência em gerenciar dados em ordem, as filas são uma estrutura de dados fundamental em computação.
 
 ### Características principais:
 
@@ -27,5 +28,3 @@ Filas são amplamente utilizadas em diversas aplicações, incluindo:
 - **Gerenciamento de tarefas**: Em sistemas operacionais, onde processos são organizados em filas de pronto, esperando para serem executados.
 - **Impressão de documentos**: Os trabalhos de impressão são organizados em uma fila, sendo impressos na ordem em que foram enviados.
 - **Simulações**: Usadas em simulações de eventos, como filas em caixas de supermercado ou filas em atendimentos de serviços.
-
-Devido à sua simplicidade e eficiência em gerenciar dados em ordem, as filas são uma estrutura de dados fundamental em computação.
