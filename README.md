@@ -62,6 +62,7 @@ que contém bibliotecas experimentais, extras ou especiais que são desenvolvida
 
 - **Arvores** 
   - [ ] Binary Tree **<sup>[1]</sup>**
+  - [ ] Binary Search Tree **<sup>[2]</sup>**
   - [ ] Recursive Tree **<sup>[4]</sup>**
 
 - **Bibliotecas**
