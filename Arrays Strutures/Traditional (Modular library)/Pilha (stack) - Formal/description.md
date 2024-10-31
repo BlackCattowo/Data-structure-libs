@@ -21,11 +21,8 @@ Pilhas são estruturas de dados que seguem o princípio **Last In, First Out (LI
 - **Sem acesso aleatório**: Ao contrário de outras estruturas de dados, como arrays tradicionais, as pilhas não permitem acesso direto a elementos que não estão no topo.
 
 ### Aplicações:
-
-Pilhas são amplamente utilizadas em diversas aplicações, incluindo:
+Devido à sua simplicidade e eficiência, as pilhas são uma estrutura de dados fundamental em computação, sendo amplamente utilizadas em diversas aplicações, incluindo:
 
 - **Algoritmos de retrocesso**: Como na navegação em histórico de páginas ou em editores de texto (funções "desfazer" e "refazer").
 - **Avaliação de expressões**: Usadas em algoritmos de conversão de notação infixa para pós-fixa e na avaliação de expressões matemáticas.
 - **Gerenciamento de chamadas de funções**: O sistema operacional utiliza pilhas para gerenciar chamadas de função e retornos, armazenando informações sobre o estado da execução.
-
-Devido à sua simplicidade e eficiência, as pilhas são uma estrutura de dados fundamental em computação.
