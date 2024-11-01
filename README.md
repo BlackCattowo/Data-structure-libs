@@ -8,7 +8,7 @@
   - Gerenciamento de filas e pilhas.
   - Gerenciamento por listas encadeadas.
   - Gerenciamento por árvores.
-  - Bibliotecas extras e experimentais de diversas utilidades.
+  - Bibliotecas extras e experimentais de diversas utilidades. (Cat's libs :3)
 </br>
 
 ## Navegação do projeto:
