@@ -61,7 +61,7 @@ que contém bibliotecas experimentais, extras ou especiais que são desenvolvida
   - [x] Doubly Circular Linked Lists (ouroboros) 
 
 - **Arvores** 
-  - [ ] Binary Tree **<sup>[1]</sup>**
+  - [ ] Binary Tree **<sup>[2]</sup>**
   - [ ] Binary Search Tree **<sup>[2]</sup>**
   - [ ] Recursive Tree **<sup>[4]</sup>**
 
