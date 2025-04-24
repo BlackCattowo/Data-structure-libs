@@ -1,0 +1,3 @@
+##Árvore Binária
+
+A árvore binária é uma estrutura de dados onde cada nó pode ter, no máximo, dois filhos: um filho à esquerda e um filho à direita. Ela é utilizada em diversos algoritmos, como os de busca, ordenação e expressão matemática. Em uma árvore binária, cada nó armazena um valor e dois ponteiros (para os filhos à esquerda e à direita). Essa estrutura permite travessias eficientes como pré-ordem, in-ordem, pós-ordem e por nível (BFS), além de facilitar operações como inserção, busca e remoção de elementos.

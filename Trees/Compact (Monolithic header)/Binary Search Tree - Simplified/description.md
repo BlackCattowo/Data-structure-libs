@@ -1,0 +1,3 @@
+##Árvore Binária de Busca (BST)
+
+A árvore binária de busca (BST) é uma variação da árvore binária em que, para cada nó, o valor de todos os nós à esquerda é menor que o valor do nó atual, e o valor de todos os nós à direita é maior. Essa característica torna a árvore binária de busca altamente eficiente para operações de busca, inserção e remoção, pois permite localizar rapidamente qualquer valor, utilizando a propriedade de ordenação. A árvore binária de busca é frequentemente utilizada em algoritmos de ordenação, busca e em implementações de dicionários e conjuntos.
